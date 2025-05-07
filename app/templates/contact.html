@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Contact
+{% endblock title %}
+
+{% block main %}
+    <h1 class="con-title">Contact US</h1>
+    <div class="foe">
+        <div class="contact_div">
+            <img src="{% static 'assets/phone1.jpg' %}" alt="">
+        </div>
+
+        <div class="blast">
+            <div class='blast-div'>
+                <h2>Email:</h2>
+                <p>abc.gmail.com</p>
+            </div>
+            <div class='blast-div'>
+                <h2>Address:</h2>
+                <p>
+                    Kalejaye, Oke-itunu, Ibadan, Nigeria
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock main %}

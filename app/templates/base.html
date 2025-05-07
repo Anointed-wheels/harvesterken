@@ -1,0 +1,102 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    {% endblock head %}
+    
+</head>
+<body>
+    <header class="top-nav">
+        <nav class="nav">
+            <div >
+                <div class="calling-icon tame">
+                    <i id="tint" class="fa-solid fa-bars"></i>
+                </div>
+                <!-- <div class="calling-can">
+                    <i class="fa-solid fa-xmark"></i>
+                </div> -->
+            </div>               
+            <ul class="calling">                    
+                <li class="about-us" ><a href="{% url 'hom' %}">HOME</a></li>
+                <li class="clean"><a href="{% url 'clean' %}">CLEANING SEVICES</a></li>
+                <li>PEST CONTROL</li>
+                <li class="our-service">OUR SEVICES</li>
+                <li class="nomb"><a href="{% url 'con' %}">CONTACT US</a></li>
+                <li>FAQ</li>
+            </ul>
+            <section class="all">
+                <div id="title-holder">
+                    <div id="title">
+                        
+                    </div>
+                </div>
+            </section>
+        </nav> 
+        <p  class="title-call">HARVESTERKEN</p>
+        <p class="prof">Professional cleaning service</p>
+    </header>
+    <main>
+        {% block main %}
+        {% endblock main %}
+    </main>
+    <footer>
+        <section class="footer ">
+            <div class="footer-background"><img src="{% static 'assets/cicle.jpg' %}" alt=""></div>
+            <div class="footer-div">
+                <div class="twist" id="first">
+                    <a href="{% url 'hom' %}"><div class="footer-logo" ><img src="{% static 'assets/logo.jpg' %}" alt="Harvesterken logo"></div></a>
+                    <div class="instik"><i class="fa-brands fa-instagram"></i> <i class="fa-brands fa-tiktok"></i></div>   
+                    <div><p class="copy">
+                        <i class="fa-regular fa-copyright"></i> 2025 ENVIROMENTAL SERVICES, INC.
+                    </p></div>
+                    <p class="copy">All rights reserved</p>                  
+                </div>
+                <div class="twist" id="second">
+                    <p class="column-title">Navigations</p><br>
+                    <p class="navigation-hover about-us">About us</p>
+                    <p class="navigation-hover">Cleaning servicves</p>
+                    <p class="navigation-hover">Pest control</p>
+                    <p class="navigation-hover">Other categories</p>
+                    <p class="navigation-hover"> Contact us</p>
+                    <p class="navigation-hover">FAQ</p>
+                </div>
+                <div class="twist" id="third">
+                    <p class="column-title">Services</p><br> 
+                    <p class="navigation-hover">Professional cleaning</p>
+                    <p class="navigation-hover">Pest control</p>
+                    <p class="navigation-hover">Relocation of properties</p> 
+                    <p class="navigation-hover">House keeping</p>
+                    <p class="navigation-hover">Weed control</p>  
+                </div>
+                <div class="twist" id="fourth">
+                    <p class="column-title">Contact us</p><br>
+                    <p class="navigation-hover">
+                        <i class="fa-solid fa-phone"></i>   (+234)8123456789 <br>
+                    </p>
+                    <p class="navigation-hover">
+                        <i class="fa-solid fa-envelope"></i> abc@gmail. <br>
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-location-dot"> </i>Address: Kalejaye Okeitunu <br>
+                    </p>
+                    <p>
+                        Kalejaye, Oke-itunu, Ibadan, Nigeria
+                    </p>
+                </div>
+            </div>
+            <div class="footer-line">
+            </div>
+            <div><button>
+                
+            </button></div>
+        </section>
+        <div class="btn">
+            <button><i class="fa-solid fa-arrows-up-down"></i></button>
+        </div> 
+    </footer>
+    <script src="{% static 'js/base.js' %}"></script>
+</body>
+</html>
