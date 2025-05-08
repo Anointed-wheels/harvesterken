@@ -5,10 +5,13 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def homepage(request):
-    return render(request, "home.html")
+    return render(request, "index.html")
 
 def contact(request):
     return render(request, "contact.html")
 
 def cleaning(request):
     return render(request, "cleaning.html")
+
+def pest_control(request):
+    return render(request, "pest.html")

@@ -1,34 +1,92 @@
+@font-face {
+  font-family: 'bungee';
+  src: url('../assets/fonts/bungee.ttf') ;
+}
+@font-face {
+  font-family: 'fred';
+  src: url('../assets/fonts/fredrick.ttf') ;
+}
+@font-face {
+  font-family: 'boldon';
+  src: url('../assets/fonts/boldon.ttf');
+}
+@font-face {
+  font-family: 'winky';
+  src: url('../assets/fonts/winky.ttf');
+}
+@font-face {
+  font-family: 'roboto';
+  src: url('../assets/fonts/roboto.ttf');
+}
+@font-face {
+  font-family: "nunito";
+  src: url("../assets/fonts/nunito.ttf");
+}
+@font-face {
+  font-family: "creep";
+  src: url("../assets/fonts/creep.ttf");
+}
+@font-face {
+  font-family: "tages";
+  src: url("../assets/fonts/tages.ttf");
+}
 .cleaning-img{
-    height: 80dvh;
-    width: 100dvw;
+  height: 90dvh;
+  width: 100dvw;
+  /* justify-content: center; */
+  /* align-content: center; */
 }
 .cleaning-topics{
-    position: relative;
-    height: 80dvh;
-    width: 100dvw;
-    justify-content: center;
-    align-content: center;
+  position: relative;
+  height: 80dvh;
+  width: 100dvw;
+  justify-content: center;
+  align-content: center;
 }
 .cleaning-overlay{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    /* background-color: black; */
-    z-index: 2;
-    background-color: #1c312c;
-    opacity: 0.5;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  /* background-color: black; */
+  z-index: 2;
+  background-color: #0b0b0b;
+  opacity: 0.5;
 }
 #mints{
-    height: 100%;
-    width: 100%;
-    position: absolute;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.cleaning-explanation{
+  position: absolute;
+  /* background-color: #91962f; */
+  justify-items: center;
+  align-content: center;
+  z-index: 6;
+  height: 40%;
+  width: 100dvw;
+  color: white;
+}
+.cleaning-explanation h1{
+  font-family: nunito;
+  font-size: 1.8rem;
+}
+.cleaning-explanation h2{
+  font-family: nunito;
+  font-size: 2rem;
+}
+.cleaning-explanation p{
+  margin: 2dvh 1.5dvw 8dvh 1.5dvw;
+  font-family: tages;
 }
 .cleaning-sort-holder{
     position: absolute;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 90dvw;
-    height: 60dvh;
+    height: 60%;
+    bottom: 0;
+    
     /* top: 17dvh; */
     /* opacity: 1; */
     flex-wrap: wrap;
@@ -39,44 +97,66 @@
     z-index: 6;
 }
 .flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 200px;
-    perspective: 1000px; /* Creates the 3D effect */
-  }
+  background-color: transparent;
+  width: 20dvw;
+  height: 45dvh;
+  perspective: 1000px; /* Creates the 3D effect */
+}
 
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-  }
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+  background-color: #232309;
+}
 
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
 
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border: 1px solid #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-  }
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 1px solid #232309;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
 
-  .flip-card-front {
-    background-color: #f1f1f1;
-    color: black;
-  }
+.flip-card-front {
+  background-color: #262626;
+  color: #f1f1f1;
+}
 
-  .flip-card-back {
-    background-color: #4CAF50;
-    color: white;
-    transform: rotateY(180deg);
-  }
+.flip-card-back {
+  background-color: #151603;
+  color: white;
+  transform: rotateY(180deg);
+}
+.what-they-say-section{
+  height: 150dvh;
+  width: 100dvw;
+}
+.say-img-holder{
+  height: 100%;
+  width: 100%;
+}
+#what-they-say-image{
+  height: 100%;
+  width: 100%;
+}
+.what-they-say-overlay{
+  height: 100%;
+  width: 100%;
+  background-color: #0b0b0b;
+  z-index: 2;
+}

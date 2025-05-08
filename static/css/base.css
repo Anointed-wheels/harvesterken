@@ -424,12 +424,11 @@ body{
     background-color: #1c312c;
 }
 .footer-line{
-    width: 70dvw;
+    width: 100dvw;
     background-color: #464444;
     height: 0.5dvh;
     position: absolute;
-    top: 40dvh;
-    left: 15dvw;
+    bottom: 8dvh;
     margin: 10dvh 0 ;
 }
 
