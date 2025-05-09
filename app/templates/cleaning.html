@@ -34,19 +34,20 @@
         </div>
     </section>
 </section>
-</section>
 <section class="cleaning-topics">
     <div class="cleaning-img">
         <div class="cleaning-overlay">
         </div>
         <div class="cleaning-explanation">
             <h1>
-                Comprehensive Pest Control Solutions for a Safer, Healthier Environment
+                Expert Cleaning Solutions for Every Need
             </h1>
-            <p>From rodent control to termite treatment, bed bug elimination
-                 to mosquito reduction, our pest control experts use the latest
-                  technologies and eco-friendly methods to identify and address the root causes of pest infestations,
-                 providing customized solutions that ensure a safe, healthy, and pest-free environment for our clients.
+            <p>We deliver comprehensive cleaning solutions, utilizing state-of-the-art equipment
+                 and eco-friendly products to provide thorough and
+                  specialized cleaning services, including janitorial services,
+                   deep cleaning, move-in/move-out cleaning,
+                 and specialized floor care, tailored to meet the unique needs
+                  of homes, offices, and industries.
             </p>
             <h2>
                 Services
@@ -99,15 +100,6 @@
         </section>
         
         <img id="mints" src="{% static 'assets/lin.jpg' %}" alt="quality-background-image">
-    </div>
-</section>
-<section class="what-they-say-section">
-    <div class="what-they-say-overlay">
-
-    </div>
-    
-    <div class="say-img-holder">
-        <img id="what-they-say-image" src="{% static 'assets/edited (2).jpg' %}" alt="">
     </div>
 </section>
 <section class="trusted ">
@@ -163,4 +155,137 @@
     </div>
     
 </section>
+<section class="what-they-say-section">
+    <div class="what-they-say-overlay">
+        
+    </div>
+    <div class="what-they-say-title">
+        <p>
+            Recent Reviews
+        </p>
+    </div>
+    <div class="individual-sayings">
+        <div class="individual-sayings-divs tumbs">
+            <div class="individual-sayings-imgs">
+                <img src="{% static 'assets/pass.jpeg' %}" alt="">
+            </div>
+            <div class="individual-sayings-bold">
+                <P>
+                    “Exceptional service, highly recommended for cleaning.”
+                </P>
+            </div>
+            <div class="individual-sayings-texts">
+                <p>
+                    Harvesterken Cleaning delivers exceptional results with meticulous attention to detail,
+                    professional staff, and cost-effective service. Highly recommended for a pristine 
+                    home and unparalleled satisfaction.
+                </p>
+            </div>
+        </div>
+        <div class="individual-sayings-divs reveal">
+            <div class="individual-sayings-imgs">
+                <img src="{% static 'assets/pass.jpeg' %}" alt="">
+            </div>
+            <div class="individual-sayings-bold">
+                <P>
+                    “Harvesterken provides the best fumigation service.”
+                </P>
+            </div>
+            <div class="individual-sayings-texts">
+                <p>
+                    Harvesterken team was prompt, professional, and communicative. I was impressed with their 
+                    cleaning and would highly recommend their services to anyone in need of house cleaning.
+                </p>
+            </div>
+        </div>
+        <div class="individual-sayings-divs tumbs">
+            <div class="individual-sayings-imgs">
+                <img src="{% static 'assets/pass.jpeg' %}" alt="">
+            </div>
+            <div class="individual-sayings-bold">
+                <P>
+                    “Expert team, exceptional results—highly recommend Harvesterken.”
+                </P>
+            </div>
+            <div class="individual-sayings-texts">
+                    <p>
+                        Kenny and his team expertly handled a challenging project, cleaning multiple buildings.
+                         I'll use Harvesterken Professional Cleaning & Fumigation Service again without hesitation.
+                    </p>
+            </div>
+        </div>
+        <div class="individual-sayings-divs reveal">
+            <div class="individual-sayings-imgs">
+                <img src="{% static 'assets/pass.jpeg' %}" alt="">
+            </div>
+            <div class="individual-sayings-bold">
+                <P>
+                    “Prompt, professional, and impressive cleaning—highly recommended.”
+                </P>
+            </div>
+            <div class="individual-sayings-texts">
+                <p>
+                    Harvesterken eradicated all rodents and cockroaches in my home.
+                 They provide the best fumigation service I've ever experienced.
+                </p>
+            </div>
+        </div>
+        <div class="individual-sayings-divs tumbs">
+            <div class="individual-sayings-imgs">
+                <img src="{% static 'assets/pass.jpeg' %}" alt="">
+            </div>
+            <div class="individual-sayings-bold">
+                <p>
+                    “Exceptional results with meticulous detail—highly recommended for a pristine home.”
+                </p>
+            </div>
+            <div class="individual-sayings-texts">
+                The Harvesterken team cleaned my home excellently. They were prompt, professional, and communicative.
+                 I highly recommend their services and will schedule more cleanings in the future.
+            </div>
+        </div>
+    </div>
+    <div class="say-img-holder">
+        <img id="what-they-say-image" src="{% static 'assets/edited (2).jpg' %}" alt="">
+    </div>
+</section>
+<section class="subscription">
+    <div class="subscribe-img-holder">
+        <img id="subscribe-img" src="{% static 'assets/dall1.avif' %}" alt="">
+    </div>
+    <div class="subscribe-overlay">
+
+    </div>
+    <div class="email-form">
+        <div class="email-form-left">
+            <p>
+                WE LOOK FORWARD TO WORKING WITH YOU. KINDLY SAY HELLO TO START A STRONG PARTNERSHIP WITH US.  
+            </p>
+        </div>
+        <div class="email-form-right">
+            <form id="contact-form" data-url="{% url 'customer' }" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- form fields as before -->
+                <label for="name"><p>FULL NAME:</p></label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="mobile_number"><p>MOBILE NUMBER:</p></label>
+                <input type="text" id="mobile_number" name="mobile_number" required><br>
+                <label for="email">EMAIL:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">INPUT YOUR MESSAGE:</label><br>
+                <textarea name="message" id="message"></textarea><br>
+                <button type="submit">Send Email</button>
+            </form>
+            <div id="form-response"></div>
+            <!-- {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="{{ message.tags }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %} -->
+        </div>
+    </div>
+</section>
+<!-- <script src="{% static 'js/base.js' %}"></script> -->
 {% endblock main %}

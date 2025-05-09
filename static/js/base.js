@@ -52,6 +52,20 @@ service.addEventListener('click', () => {
      waiting.scrollIntoView({ behavior: 'smooth' });   
 })
 
+const links = document.querySelector('.links')
+
+links.addEventListener("click", () => {
+    if(links.hrefList.contains("{% url 'hom' %}")){
+        links.hrefList.remove("{% url 'hom' %}")
+        links.hrefList.add("#")
+    }
+    else{
+        links.hrefList.remove("#")
+        links.hrefList.add("{% url 'hom' %}")
+    }
+})
+
+
 // service.addEventListener("click", () => {
 //     if (waiting.classList.contains("quality-service")){
 //         waiting.classList.remove("quality-service")
@@ -100,3 +114,79 @@ const reveal = () => {
     }
 }
 window.addEventListener('scroll', reveal)
+
+
+// const tumbs = () => {
+//     var tumbItems = document.querySelectorAll('.tumbs');
+
+//     for (var i = 0; i < tumbItems.length; i++) {
+//         var windowheight = window.innerHeight;
+//         var tumbtop = tumbItems[i].getBoundingClientRect().top;
+//         var revealpoint = 50;
+
+//         if (tumbtop < windowheight - revealpoint) {
+//             tumbItems[i].classList.add('showAnim');
+//         } else {
+//             tumbItems[i].classList.remove('showAnim');
+//         }
+//     }
+// };
+
+const left_reveal = () => {
+    var tumbItems = document.querySelectorAll('.tumbs');
+
+    for (var i = 0; i < tumbItems.length; i++) {
+        var windowheight = window.innerHeight;
+        var tumbtop = tumbItems[i].getBoundingClientRect().top;
+        var revealpoint = 50;
+
+        if (tumbtop < windowheight - revealpoint) {
+            tumbItems[i].classList.add('showAnim');
+        } else {
+            tumbItems[i].classList.remove('showAnim');
+        }
+    }
+};
+
+window.addEventListener('scroll', () => {
+    reveal();
+    tumbs(); // call both on scroll
+});
+
+const url = form.getAttribute('data-url');
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+    const responseBox = document.getElementById('form-response');
+    const url = form.getAttribute('data-url');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const name = formData.get('name');  // Get the name from the form
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRFToken': formData.get('csrfmiddlewaretoken'),
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            responseBox.innerHTML = `<p class="${data.status}">${data.message}</p>`;
+
+            if (data.status === 'success') {
+                alert(`Message sent successfully. Thank you, ${name}!`);
+                form.reset();
+            }
+        })
+        .catch(error => {
+            responseBox.innerHTML = `<p class="error">Something went wrong.</p>`;
+            console.error(error);
+        });
+    });
+});

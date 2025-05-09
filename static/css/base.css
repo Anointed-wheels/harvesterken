@@ -124,7 +124,7 @@ body{
     left: 30px;
     z-index: 44444;
     font-family: fred;
-    font-size: 2em;
+    font-size: clamp(1rem, 3vw, 2.3rem);
     color: white;
     font-weight: 590;
     
@@ -137,7 +137,7 @@ body{
     color: white;
     justify-content: space-between;
     width: 45dvw;
-    font-size: 0.8em;
+    font-size: clamp(0.3rem, 1vw, 1rem);
     margin: 0 10dvw;
     flex-wrap: nowrap;
     text-decoration: none;
@@ -163,6 +163,8 @@ body{
     left: 60px;
     z-index: 44444;
     color: #ffffff;
+    font-family: nunito;
+    font-size: clamp(1rem, 1vw, 1rem);
 }
 .navigation{
     position: relative;
@@ -336,7 +338,7 @@ body{
     margin: 0 7vw;
     font-family: nunito;
     overflow: hidden;
-    font-size: 1rem;
+    font-size: clamp(0.7rem, 1.4vw, 1rem);
 }
 .down{
     margin: 3vh 7vw 3vh 7vw;
@@ -477,12 +479,13 @@ body{
 }
 .sort-holder{
     position: absolute;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     width: 100dvw;
     height: 60dvh;
     top: 17dvh;
     /* opacity: 1; */
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-evenly;
     /* background-color: #dedede; */
     z-index: 6;
@@ -521,8 +524,8 @@ body{
     animation: sort 2s ease-in-out infinite;
 }
 .sort-white{
-    min-width: 27dvw;
-    height: 50dvh;
+    width: 30%;
+    height: 100%;
     background-color: #ffffff;
     border: 5px solid #e5e5e5;
     color: black;
@@ -539,7 +542,7 @@ body{
     margin: 3dvh;
 }
 .sort-white p{
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.5vw, 2rem);
     margin: 0.2dvh;
     font-family: nunito;
 }
@@ -583,7 +586,7 @@ body{
     position: relative;
     transform: translateY(150px);
     opacity: 0;
-    transition: all 2s ease;
+    transition: all 4s ease;
   }
   .reveal.showAnim{
     transform: translateY(0px);

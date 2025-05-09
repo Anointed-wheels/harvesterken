@@ -3,6 +3,10 @@
   src: url('../assets/fonts/bungee.ttf') ;
 }
 @font-face {
+  font-family: 'play';
+  src: url('../assets/fonts/play.ttf') ;
+}
+@font-face {
   font-family: 'fred';
   src: url('../assets/fonts/fredrick.ttf') ;
 }
@@ -129,8 +133,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: clamp(1rem, 2vw, 2.5rem);;
 }
+
 
 .flip-card-front {
   background-color: #262626;
@@ -143,20 +148,200 @@
   transform: rotateY(180deg);
 }
 .what-they-say-section{
-  height: 150dvh;
+  height: 140dvh;
   width: 100dvw;
+  position: relative;
+}
+.what-they-say-title{
+  /* background-color: #e5e5e5; */
+  position: absolute;
+  top: 0;
+  height: 15%;
+  width: 100%;
+  z-index: 5;
+  justify-items: center;
+  align-content: center;
+}
+.what-they-say-title p{
+  font-size: clamp(2rem, 5vw, 5rem);
+  color: #ffffff;
+  bottom: 0;
 }
 .say-img-holder{
   height: 100%;
   width: 100%;
+  display: flex;
+  position: absolute;
+  top: 0;
 }
 #what-they-say-image{
   height: 100%;
   width: 100%;
+  display: flex;
+  top: 0;
+  
 }
 .what-they-say-overlay{
   height: 100%;
   width: 100%;
   background-color: #0b0b0b;
   z-index: 2;
+  position: absolute;
+  opacity: 0.9;
+  top: 0;
+}
+.individual-sayings{
+  height: 85%;
+  width: 100%;
+  /* background-color: #f1f1f1; */
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 0;
+  opacity: 1;
+  z-index: 5;
+}
+.individual-sayings-divs{
+  height: 50dvh;
+  width: 30dvw;
+  background-color: #F0EAD6;
+  display: flex;
+  margin: 5dvh 0 0 0;
+  border-radius: 20px;
+  border: 8px solid #e5e5e5;
+  position: relative;
+  /* justify-content: center;
+  align-content: center;
+  align-items: center; */
+}
+.individual-sayings-imgs{
+  height: 25%;
+  width: 100%;
+  /* background-color: #232309; */
+  position: absolute;
+  top: 0;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.individual-sayings-texts{
+  height: 40%;
+  width: 100%;
+  /* background-color: aqua; */
+  position: absolute;
+  bottom: 0;
+  font-size: clamp(0.5rem, 1.3vw, 2rem);
+  font-family: winky;
+}
+.individual-sayings-texts p{
+  margin: 2% 0;
+}
+.individual-sayings-bold{
+  height: 35%;
+  width: 100%;
+  /* background-color: yellow; */
+  position: absolute;
+  bottom: 40%;
+  font-family: nunito;
+  font-weight: bolder;
+  font-size: clamp(0.5rem, 1.5vw, 2rem);
+  align-content: center;
+  justify-content: center;
+  
+}
+.individual-sayings-bold p{
+  margin: 0 10% 0 10%;
+}
+.individual-sayings-imgs img{
+  height: 80%;
+  min-width: 20%;
+  display: flex;
+  position: absolute;
+  border-radius: 50%;
+  /* top: 0; */
+}
+.tumbs{
+  position: relative;
+  transform: translateX(300px);
+  opacity: 0;
+  transition: all 1s ease;
+}
+.tumbs.showAnim{
+  transform: translateY(0px);
+  opacity: 1;
+  /* margin: 5dvh; */
+}
+.left_reveal{
+  position: relative;
+  transform: translateX(-150px);
+  opacity: 0;
+  transition: all 4s ease;
+}
+.left_reveal.showAnim{
+  transform: translateY(0px);
+  opacity: 1;
+  /* margin: 5dvh; */
+}
+.subscription{
+  position: relative;
+  width: 100dvw;
+  height: 60dvh;
+}
+.subscribe-img-holder{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#subscribe-img{
+  width: 100%;
+  height: 100%;
+}
+.subscribe-overlay{
+  position: absolute;
+  top: 0;
+  background-color: #0b0b0b;
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
+}
+.email-form{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  /* background-color: #F0EAD6; */
+}
+.email-form-left{
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  /* background-color: aqua; */
+  justify-content: center;
+  align-content: center;
+  font-family: play;
+  font-size: clamp(0.4rem, 3.5vw, 6rem);
+  font-weight: bolder;
+  color: #e5e5e5;
+}
+.email-form-left p{
+  padding: 5%;
+}
+.email-form-right{
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  /* background-color: grey; */
+  justify-items: center;
+  align-content: center;
+  color: #f1f1f1;
+  font-size: clamp(0.5rem, 2vw, 2rem);
+}
+.messages{
+  z-index: 7;
+  color: #e5e5e5;
+  font-size: 2rem;
 }
